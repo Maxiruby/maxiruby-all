@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maxi-landing-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maxi-landing
+  template:
+    metadata:
+      labels:
+        app: maxi-landing
+    spec:
+      containers:
+        - name: maxi-landing
+          image: muzman01/maxi-landing
+          # env:
+          #   - name: JWT_KEY
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: jwt-secret
+          #         key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maxi-landing-srv
+spec:
+  selector:
+    app: maxi-landing
+  ports:
+    - name: maxi-landing
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

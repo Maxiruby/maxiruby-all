@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maxi-holders-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maxi-holders
+  template:
+    metadata:
+      labels:
+        app: maxi-holders
+    spec:
+      containers:
+        - name: maxi-holders
+          image: muzman01/maxi-holders
+          # env:
+          #   - name: JWT_KEY
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: jwt-secret
+          #         key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maxi-holders-srv
+spec:
+  selector:
+    app: maxi-holders
+  ports:
+    - name: maxi-holders
+      protocol: TCP
+      port: 8000
+      targetPort: 8000

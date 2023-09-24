@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maxi-admin-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maxi-admin
+  template:
+    metadata:
+      labels:
+        app: maxi-admin
+    spec:
+      containers:
+        - name: maxi-admin
+          image: muzman01/maxi-admin
+          # env:
+          #   - name: JWT_KEY
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: jwt-secret
+          #         key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maxi-admin-srv
+spec:
+  selector:
+    app: maxi-admin
+  ports:
+    - name: maxi-admin
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: maxi-project-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: maxi-project
+  template:
+    metadata:
+      labels:
+        app: maxi-project
+    spec:
+      containers:
+        - name: maxi-project
+          image: muzman01/maxi-project
+          # env:
+          #   - name: JWT_KEY
+          #     valueFrom:
+          #       secretKeyRef:
+          #         name: jwt-secret
+          #         key: JWT_KEY
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: maxi-project-srv
+spec:
+  selector:
+    app: maxi-project
+  ports:
+    - name: maxi-project
+      protocol: TCP
+      port: 3000
+      targetPort: 3000
