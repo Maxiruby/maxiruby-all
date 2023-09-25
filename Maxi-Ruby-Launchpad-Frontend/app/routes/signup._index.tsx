@@ -53,7 +53,7 @@ export default function Signup() {
         redirect: "follow",
       };
       const response = fetch(
-        "http://api.maxiruby.com/api/users/auth/register",
+        "https://api.maxiruby.com/api/users/auth/register",
         requestOptions
       );
       const data = await (await response).json();

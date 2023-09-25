@@ -24,7 +24,7 @@ export default function eCommerce() {
     console.log("Users");
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/landing",
+        "https://api.maxiruby.com/api/admin/landing",
         {
           method: "GET",
           headers: {

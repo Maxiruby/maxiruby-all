@@ -94,7 +94,7 @@ function Signup() {
         body: raw,
         redirect: "follow"
       };
-      const response = fetch("http://api.maxiruby.com/api/users/auth/register", requestOptions);
+      const response = fetch("https://api.maxiruby.com/api/users/auth/register", requestOptions);
       const data = await (await response).json();
       console.log(data);
       setLoading(false);

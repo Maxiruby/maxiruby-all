@@ -24,7 +24,7 @@ const RefKeyForm = () => {
     setSuccess("");
     setError("");
     try {
-      const response = await fetch("http://api.maxiruby.com/api/admin/key", {
+      const response = await fetch("https://api.maxiruby.com/api/admin/key", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

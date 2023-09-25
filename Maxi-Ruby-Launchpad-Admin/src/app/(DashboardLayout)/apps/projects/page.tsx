@@ -136,14 +136,15 @@ function Row(props: { row: any }) {
       signer
     );
     const contract = new ethers.Contract(
-      "0x651018cbc4ca15693f4e623a0141d19eb48d1e30",
+      "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
       AdminAbi,
       signer
     );
     setLoading(true);
+    let selled = ethers.utils.parseUnits(project_hard_cap, "ether");
     try {
       await t.approve(
-        "0x651018cbc4ca15693f4e623a0141d19eb48d1e30",
+        "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
         ethers.utils.parseUnits(project_hard_cap, "ether")
       );
       const create = await contract.createPresale(
@@ -151,7 +152,7 @@ function Row(props: { row: any }) {
         startTime,
         endTime,
         (Number(price) * 10 ** 18).toString(),
-        (tokenToSell = project_hard_cap),
+        selled,
         tokenDecimal,
         vestingStartTime,
         vestingCliffTime,
@@ -165,14 +166,14 @@ function Row(props: { row: any }) {
 
       const result = watchContractEvent(
         {
-          address: "0x651018cbc4ca15693f4e623a0141d19eb48d1e30",
+          address: "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
           abi: AdminAbi,
           eventName: "PresaleCreated",
         },
         async (event: any) => {
           console.log(event[0].topics[1]);
           const response = await fetch(
-            "http://api.maxiruby.com/api/admin/project/accept",
+            "https://api.maxiruby.com/api/admin/project/accept",
             {
               method: "POST",
               headers: {
@@ -242,7 +243,7 @@ function Row(props: { row: any }) {
   };
   const handleDelete = async (id: any) => {
     const response = await fetch(
-      "http://api.maxiruby.com/api/admin/project/delete",
+      "https://api.maxiruby.com/api/admin/project/delete",
       {
         method: "POST",
         headers: {
@@ -485,7 +486,7 @@ const GetApplication = () => {
     console.log("Users");
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/application",
+        "https://api.maxiruby.com/api/admin/application",
         {
           method: "GET",
           headers: {

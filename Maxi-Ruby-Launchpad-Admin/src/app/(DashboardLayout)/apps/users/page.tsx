@@ -23,7 +23,7 @@ const Users = () => {
     console.log("Users");
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/allusers",
+        "https://api.maxiruby.com/api/admin/allusers",
         {
           method: "GET",
           headers: {

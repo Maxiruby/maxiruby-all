@@ -87,7 +87,7 @@ function Row(props: { row: any }) {
   const [loading, setLoading] = React.useState(false);
   const pause = async (name: any) => {
     const response = await fetch(
-      "http://api.maxiruby.com/api/admin/project/pause",
+      "https://api.maxiruby.com/api/admin/project/pause",
       {
         method: "POST",
         headers: {
@@ -106,7 +106,7 @@ function Row(props: { row: any }) {
   };
   const active = async (name: any) => {
     const response = await fetch(
-      "http://api.maxiruby.com/api/admin/project/activeet",
+      "https://api.maxiruby.com/api/admin/project/activeet",
       {
         method: "POST",
         headers: {
@@ -318,7 +318,7 @@ const GetApplication = () => {
     console.log("Users");
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/accepted",
+        "https://api.maxiruby.com/api/admin/accepted",
         {
           method: "GET",
           headers: {

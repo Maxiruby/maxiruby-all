@@ -54,7 +54,7 @@ const Detail = () => {
   useEffect(() => {
     const getProje = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/application/" + proje?.projectİd,
+        "https://api.maxiruby.com/api/admin/application/" + proje?.projectİd,
         {
           method: "GET",
           headers: {

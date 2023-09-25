@@ -37,7 +37,7 @@ const TierTwoAlc = ({ tierId, project_id }: any) => {
       await provider.send("eth_requestAccounts", []); // <- this promps user to connect metamask
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        "0x8B7375ec99572Ce2a1Bda223B6Cf39Ca533cA7Df",
+        "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
         AdminAbi,
         signer
       );

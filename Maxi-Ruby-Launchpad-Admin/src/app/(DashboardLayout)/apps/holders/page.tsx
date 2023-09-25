@@ -26,7 +26,7 @@ const Holders = () => {
     console.log("Users");
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/holders",
+        "https://api.maxiruby.com/api/admin/holders",
         {
           method: "GET",
           headers: {
@@ -47,7 +47,7 @@ const Holders = () => {
     try {
       setBtnLoading(true);
       const response = await fetch(
-        "http://api.maxiruby.com/api/holder/0x5Cf8eA4278f689B301C4a17DdCa9D5ec8b0B0511",
+        "https://api.maxiruby.com/api/holder/0x5Cf8eA4278f689B301C4a17DdCa9D5ec8b0B0511",
         {
           method: "GET",
           headers: {

@@ -41,7 +41,7 @@ const Changes = ({ tierId }: any) => {
     const dateObjStart = new Date(value3);
     try {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/project/update",
+        "https://api.maxiruby.com/api/admin/project/update",
         {
           method: "POST",
           headers: {

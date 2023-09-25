@@ -34,7 +34,7 @@ const TierTwo = ({ tierId }: any) => {
       await provider.send("eth_requestAccounts", []); // <- this promps user to connect metamask
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        "0x8B7375ec99572Ce2a1Bda223B6Cf39Ca533cA7Df",
+        "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
         AdminAbi,
         signer
       );
@@ -42,7 +42,7 @@ const TierTwo = ({ tierId }: any) => {
         gasLimit: "2000000",
       });
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/addtier",
+        "https://api.maxiruby.com/api/admin/addtier",
         {
           method: "POST",
           headers: {
@@ -77,7 +77,7 @@ const TierTwo = ({ tierId }: any) => {
       await provider.send("eth_requestAccounts", []); // <- this promps user to connect metamask
       const signer = provider.getSigner();
       const contract = new ethers.Contract(
-        "0x8B7375ec99572Ce2a1Bda223B6Cf39Ca533cA7Df",
+        "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
         AdminAbi,
         signer
       );
@@ -85,7 +85,7 @@ const TierTwo = ({ tierId }: any) => {
         gasLimit: "2000000",
       });
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/removetier",
+        "https://api.maxiruby.com/api/admin/removetier",
         {
           method: "POST",
           headers: {
@@ -113,7 +113,7 @@ const TierTwo = ({ tierId }: any) => {
   useEffect(() => {
     const getKey = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/gettiers/" + tierId,
+        "https://api.maxiruby.com/api/admin/gettiers/" + tierId,
         {
           method: "GET",
           headers: {

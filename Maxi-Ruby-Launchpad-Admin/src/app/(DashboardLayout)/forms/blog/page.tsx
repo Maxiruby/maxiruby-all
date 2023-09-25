@@ -89,7 +89,7 @@ const QuillEditor = () => {
     setSuccess("");
     setError("");
     try {
-      const response = await fetch("http://api.maxiruby.com/api/admin/blog", {
+      const response = await fetch("https://api.maxiruby.com/api/admin/blog", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

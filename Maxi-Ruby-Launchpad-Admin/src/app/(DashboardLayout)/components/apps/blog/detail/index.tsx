@@ -77,7 +77,7 @@ const BlogDetail = () => {
   useEffect(() => {
     const users = async () => {
       const response = await fetch(
-        "http://api.maxiruby.com/api/admin/getblog/" + getTitle,
+        "https://api.maxiruby.com/api/admin/getblog/" + getTitle,
         {
           method: "GET",
           headers: {

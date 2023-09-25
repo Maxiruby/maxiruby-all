@@ -52,7 +52,7 @@ const BlogListing = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
     const users = async () => {
-      const response = await fetch("http://api.maxiruby.com/api/admin/blog", {
+      const response = await fetch("https://api.maxiruby.com/api/admin/blog", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

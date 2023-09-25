@@ -1,7 +1,7 @@
 import express from "express";
 import "express-async-errors";
 import cookieSession from "cookie-session";
-import { json,urlencoded } from "body-parser";
+import { json, urlencoded } from "body-parser";
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
 import swaggerJsdoc from "swagger-jsdoc";
@@ -41,10 +41,14 @@ dotenv.config();
 
 const app = express();
 // CORS middleware
-app.use(cors());
+const corsOptions = {
+  origin: "*",
+};
+
+app.use(cors(corsOptions));
 app.set("trust proxy", true);
-app.use(json({ limit: '10mb' }));  // 10MB olarak sınırı artır
-app.use(urlencoded({ limit: '10mb', extended: true }));
+app.use(json({ limit: "10mb" })); // 10MB olarak sınırı artır
+app.use(urlencoded({ limit: "10mb", extended: true }));
 app.use(
   cookieSession({
     signed: false,
@@ -68,11 +72,11 @@ app.use(activeEtRouter);
 app.use(addtierRouter);
 app.use(getTiersRouter);
 app.use(removeTierRouter);
-app.use(updateProjectRouer)
-app.use(addBlogRouter)
-app.use(getOneBlogRouter)
-app.use(gettBlogsRouter)
-app.use(deleteProjectRouter)
+app.use(updateProjectRouer);
+app.use(addBlogRouter);
+app.use(getOneBlogRouter);
+app.use(gettBlogsRouter);
+app.use(deleteProjectRouter);
 // error handler
 app.use(errorHandler);
 app.all("*", async (req, res) => {
