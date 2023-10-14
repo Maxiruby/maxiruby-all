@@ -2,14 +2,14 @@ import nodemailer, { createTransport } from "nodemailer";
 import { google } from "googleapis";
 import { OAuth2Client } from "google-auth-library";
 
-const EMAIL = "muzman@beersolution.io";
+const EMAIL = "admin@maxiruby.com";
 const MAILING_ID =
-  "971738052246-7o166m5c19iks63grelti0dsl9cl5t70.apps.googleusercontent.com";
+  "169554318369-33et9k7eo1ueek0ds00mr7j8eh6ejunq.apps.googleusercontent.com";
 const MAILING_REFRESH =
-  "1//04UVFbnr5fs5SCgYIARAAGAQSNwF-L9Ir2kgCOP0jdZSbAa6sytcymgW4s0-SvATj55k1cNxU0QwIsWhpuIp9FGZWCYWup0YPr0Y";
-const MAILING_SECRET = "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";
+  "1//04maJvfOljMaxCgYIARAAGAQSNwF-L9Irh-s5Dl3lBidw1_tLaXP4JXMgZIu4U2lomR3HFzF9sZnzn7fiYaNC7PlOvD5a61GlAnY";
+const MAILING_SECRET = "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";
 const MAILING_ACCESS =
-  "ya29.a0AfB_byAgQr69wB9WZedS0amzyEGC_r9-nfrwBSkVFctBUUMEMQp6KXmCKxhIQmsMWurZmsDXuuf5RWZ6JczYDN-mxULa3P-xTMhhXWOgEs7OcbT7e3rBWMpv6sqrV1mB1KTEINl5HGRDKu7dI9UFi21fzzfCoNUJxYK4aCgYKAfoSARESFQGOcNnC9r_17Ncu9LYLg7IryR3Hzw0171 ";
+  "ya29.a0AfB_byB1reMIFogYC-JnwFCozb2lFpFUTi3YB_eh-ZC6WhWH3aoI79C8d0gzeFruzJseoM7o6F0Wrv38ZtDJntYO8LkSAYQlDspAHS97b9AYB20X7AAlmc5Ljj2z_Azf3BwavkaRALmHMOPfmqSqzOanLb_6HW05lQfPaCgYKAaUSARISFQGOcNnCa94x4xct61RhshI-Xu3g0Q0171 ";
 const oauth2Client = new google.auth.OAuth2(
   MAILING_ID!,
   MAILING_SECRET!,
@@ -41,7 +41,6 @@ const sendVerificationEmail = async (
         accessToken,
       },
     });
-
     const mailOptions = {
       from: EMAIL!,
       to: email,

@@ -6,15 +6,13 @@ import {
   optimism,
   bscTestnet,
   avalancheFuji,
+  bsc,
 } from "wagmi/chains";
 import { alchemyProvider } from "wagmi/providers/alchemy";
 import { publicProvider } from "wagmi/providers/public";
 import { InjectedConnector } from "wagmi/connectors/injected";
 
-const { chains, publicClient } = configureChains(
-  [bscTestnet],
-  [publicProvider()]
-);
+const { chains, publicClient } = configureChains([bsc], [publicProvider()]);
 
 const walletConnectProjectId = "8b598b955027ef59e158c27e7f42a7bd";
 

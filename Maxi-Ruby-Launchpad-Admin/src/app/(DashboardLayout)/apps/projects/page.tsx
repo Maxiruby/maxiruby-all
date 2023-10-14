@@ -136,7 +136,7 @@ function Row(props: { row: any }) {
       signer
     );
     const contract = new ethers.Contract(
-      "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
+      "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
       AdminAbi,
       signer
     );
@@ -144,7 +144,7 @@ function Row(props: { row: any }) {
     let selled = ethers.utils.parseUnits(project_hard_cap, "ether");
     try {
       await t.approve(
-        "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
+        "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
         ethers.utils.parseUnits(project_hard_cap, "ether")
       );
       const create = await contract.createPresale(
@@ -166,7 +166,7 @@ function Row(props: { row: any }) {
 
       const result = watchContractEvent(
         {
-          address: "0x0DC6247f0b52363aB920369D39f7f801dE41902D",
+          address: "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
           abi: AdminAbi,
           eventName: "PresaleCreated",
         },

@@ -102,7 +102,7 @@ app.get('/api/holder/:id', async (req, res) => {
 
 
 mongoose
-    .connect("mongodb://localhost:27017/launch")
+    .connect("mongodb://maxi-mongo-sr:27017/launch")
     .then(() => console.log("database connected successfully"))
     .catch((err) => console.log("error connecting to mongodb", err));
 
