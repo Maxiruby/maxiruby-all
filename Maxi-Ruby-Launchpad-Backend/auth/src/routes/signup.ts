@@ -82,7 +82,7 @@ router.post(
       { id: newUser._id.toString() },
       "30m"
     );
-    const url = `https://test.maxiruby.com/activate/${emailVerificationToken}`;
+    const url = `https://maxiruby.com/activate/${emailVerificationToken}`;
 
     await sendVerificationEmail(newUser.email, email, url);
     // generate jwt token
