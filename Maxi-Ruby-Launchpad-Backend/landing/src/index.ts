@@ -20,6 +20,9 @@ import { getTierListRouter } from "./routes/getTierList";
 import { gettBlogsRouter } from "./routes/getBlog";
 import { getOneBlogRouter } from "./routes/getOneBlog";
 import { addProjectUser } from "./routes/addProject";
+import { landingsRouterTest } from "./routes/testAll";
+import { getOneProjecttest } from "./routes/gettest";
+import { addProjectUsertest } from "./routes/addProjecttest";
 
 const PORT = process.env.PORT || 3000;
 
@@ -52,6 +55,9 @@ app.use(getTierListRouter);
 app.use(addProjectUser);
 app.use(getOneBlogRouter);
 app.use(gettBlogsRouter);
+app.use(landingsRouterTest)
+app.use(getOneProjecttest)
+app.use(addProjectUsertest)
 // error handler
 app.use(errorHandler);
 app.all("*", async (req, res) => {

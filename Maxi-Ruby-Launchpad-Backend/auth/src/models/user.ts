@@ -64,7 +64,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
-  userVerified: { type: Boolean, default: false },
+  userVerified: { type: Boolean, default: true },
   banned: { type: Boolean, default: false },
   wallets: [
     {

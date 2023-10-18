@@ -25,7 +25,7 @@ router.post(
       }
       const emailVerificationToken = generateToken(
         { id: user._id.toString(), email: user.email },
-        "30m"
+        "7d"
       );
       const url = `https://maxiruby.com/activate/${emailVerificationToken}`;
       sendVerificationEmail(user.email, user.email, url);

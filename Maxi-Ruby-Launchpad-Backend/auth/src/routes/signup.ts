@@ -72,6 +72,8 @@ router.post(
     const newUser = User.build({
       email: email,
       password: cryptedPassword,
+      userVerified: true,
+      verify: true,
     });
     console.log("gecti 3");
 
@@ -79,8 +81,8 @@ router.post(
     console.log("gecti 4");
 
     const emailVerificationToken = generateToken(
-      { id: newUser._id.toString() },
-      "30m"
+      { id: newUser._id.toString(), email: email },
+      "7d"
     );
     const url = `https://maxiruby.com/activate/${emailVerificationToken}`;
 

@@ -136,7 +136,7 @@ function Row(props: { row: any }) {
       signer
     );
     const contract = new ethers.Contract(
-      "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
+      "0xcDaaD7e34576b2Bf852227451731994Eaa34A6B7",
       AdminAbi,
       signer
     );
@@ -144,7 +144,7 @@ function Row(props: { row: any }) {
     let selled = ethers.utils.parseUnits(project_hard_cap, "ether");
     try {
       await t.approve(
-        "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
+        "0xcDaaD7e34576b2Bf852227451731994Eaa34A6B7",
         ethers.utils.parseUnits(project_hard_cap, "ether")
       );
       const create = await contract.createPresale(
@@ -159,6 +159,8 @@ function Row(props: { row: any }) {
         vestingPeriod,
         enableByEther,
         enableByUsdt,
+        //@ts-ignore
+        false,
         {
           gasLimit: "3000000",
         }
@@ -166,7 +168,7 @@ function Row(props: { row: any }) {
 
       const result = watchContractEvent(
         {
-          address: "0x67eb4fD1F47ddE52AeF2aC556E0C441d04D4b4d3",
+          address: "0xcDaaD7e34576b2Bf852227451731994Eaa34A6B7",
           abi: AdminAbi,
           eventName: "PresaleCreated",
         },
